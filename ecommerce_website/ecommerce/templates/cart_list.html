@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 
-{% block title %}test{% endblock %}
+{% block title %}カート{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -18,19 +18,26 @@
           <th>商品名</th>
           <th>価格</th>
           <th>個数</th>
+          <th>小計</th>
       </tr>
       {% for product in products %}
       <tr>
           <td>{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
-          <td></td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.subtotal}}</td>
       </tr>
       {% endfor %}
     </table>
     <hr />
     <div class="row">
-      <div class="col-sm-12 text-right">
+      <div class="col-sm-2 text-left">
+        <p>
+          合計: {{request.session.num}}点
+        </p>
+      </div>
+      <div class="col-sm-2 col-sm-offset-8 text-right">
         <p>
           <strong><span class="fa fa-jpy"></span>{{total}} 円</strong>
         </p>

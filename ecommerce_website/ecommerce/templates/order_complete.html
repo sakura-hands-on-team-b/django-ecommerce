@@ -1,12 +1,12 @@
 {% extends "base/base.html" %}
 
-{% block title %}test{% endblock %}
+{% block title %}お申し込みが完了しました{% endblock %}
 
 {% block body %}
 <div class="row">
   <div class="col-sm-10 col-sm-offset-1">
     <h1>注文が完了しました</h1>
-    <p>注文番号:XXXXXXXX</p>
+    <p>注文番号:{{order_id}}</p>
     <p>
       お客様がご注文された明細をご登録されているメールアドレスに送信いたしました。<br />
       内容のご確認をお願いいたします。
