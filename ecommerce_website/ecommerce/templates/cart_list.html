@@ -1,14 +1,52 @@
-<table>
-    <tr>
-        <th>商品番号</th>
-        <th>商品名</th>
-        <th>価格</th>
-    </tr>
-{% for product in products %}
-    <tr>
-        <td>{{ product.id }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-    </tr>
-{% endfor %}
-</table>
+{% extends "base/base.html" %}
+
+{% block title %}test{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <!-- <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-12 text-right">
+        <a href="#" class="btn btn-warning" onClick="history.back();">戻る</a>
+      </div>
+    </div> -->
+
+    <h1><span class="fa fa-shopping-basket"></span>  ご注文内容</h1>
+    <table class="table table-responsive">
+      <tr>
+          <th>商品番号</th>
+          <th>商品名</th>
+          <th>価格</th>
+          <th>個数</th>
+      </tr>
+      {% for product in products %}
+      <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <p>
+          <strong><span class="fa fa-jpy"></span>{{total}} 円</strong>
+        </p>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-sm-2 text-left">
+        <a href="../cart_reset/" class="btn btn-danger" ><span class="fa fa-erazer"></span> カートを空にする</a>
+      </div>
+      <div class="col-sm-5 col-sm-offset-1 text-center">
+        <a href="../order/" class="btn btn-info btn-block" ><span class="fa fa-shopping-basket"></span> 注文する</a>
+      </div>
+      <div class="col-sm-1 col-sm-offset-3 text-right">
+        <a href="#" class="btn btn-warning" onClick="history.back();">戻る</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

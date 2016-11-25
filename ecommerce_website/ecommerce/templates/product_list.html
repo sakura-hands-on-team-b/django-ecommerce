@@ -1,8 +1,77 @@
-<a href="../cart_list/">カートの中身を表示する</a>
-<a href="../cart_reset/">カートを空にする</a>
-<a href="../order/">注文する</a>
-{% for product in products %}
-    <h1>{{ product.name }}</h1>
-    <img src="../../media/{{ product.image }}" alt="" width="200" height="200" border="0" />
-    <a href="../cart_add/{{ product.id }}">カートに入れる</a>
-{% endfor %}
+
+{% extends "base/base.html" %}
+
+{% block title %}test{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h1><span class="fa fa-server">  商品リスト</h1>
+    <table class="table table-responsive">
+      {% for product in products %}
+      <tr>
+        <td>
+          <h3><span class="fa fa-briefcase">  <u>{{ product.name }}</u></h3>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="../../media/{{ product.image }}" alt="" width="200" height="200" border="0" class="img-thumbnail"/>
+                </div>
+                <div class="col-sm-5">
+                  <p>
+                    <strong><u>商品説明</u></strong><br />
+                    何か商品についてのコメントを記載するブロック<br />
+                    何か商品についてのコメントを記載するブロック<br />
+                    何か商品についてのコメントを記載するブロック<br />
+                    何か商品についてのコメントを記載するブロック<br />
+                  </p>
+                </div>
+                <div class="col-sm-4">
+                  <div style="margin-top: 37%;">
+                    <label　class="control-label" for="quantity">数量</label>
+                    <select id="quantity-{{product.id}}" class="form-control" name="quantity">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    <a href="#" product_id="{{product.id}}" class="btn btn-primary card-add"><span class="fa fa-shopping-cart"></span> カートに入れる</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <!-- <td>
+          <div class="row" style="margin-top:198px;">
+            <div class="col-sm-12">
+              <label　class="control-label" for="quantity">数量</label>
+              <select id="quantity-{{product.id}}" class="form-control" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <a href="#" product_id="{{product.id}}" class="btn btn-primary card-add"><span class="fa fa-shopping-cart"></span> カートに入れる</a>
+            </div>
+          </div>
+        </td> -->
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}
