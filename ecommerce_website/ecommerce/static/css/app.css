@@ -1,0 +1,21 @@
+/* 
+    Created on : 2016/01/30, 13:28:41
+    Author     : hoshiko
+*/
+body {margin-top: 80px;}
+
+.mt10 {margin-top: 10px;}
+.mt20 {margin-top: 20px;}
+.mb10 {margin-bottom: 10px;}
+.mb20 {margin-bottom: 20px;}
+.ml10 {margin-left: 10px;}
+.ml20 {margin-left: 20px;}
+.ml40 {margin-left: 40px;}
+.ml50 {margin-left: 50px;}
+
+.header-width-base {width: 95%;}
+.header-width-wide85 {width: 85%;}
+.header-width-wide75 {width: 75%;}
+
+.modal-lg-1200 {width: 1200px;}
+.modal-lg-1400 {width: 1400px;}
