@@ -122,3 +122,9 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# 静的ファイルを共通で置く
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
